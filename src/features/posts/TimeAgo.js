@@ -5,13 +5,15 @@ export const TimeAgo = ({ timestamp }) => {
     let timeAgo = ''
     if (timestamp) {
         const date = parseISO(timestamp)
-        const timePeriod = formatDistanceToNow(date)
+        let timePeriod = formatDistanceToNow(date)
         timeAgo = `${timePeriod} ago`
     }
 
+
+
     return (
         <span title={timestamp}>
-            <i>{timeAgo}</i>
+            <i> ({timeAgo})</i>
         </span>
     )
 }
